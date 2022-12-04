@@ -55,7 +55,7 @@ def get_iterator(args):
 
         def iterate():
             for fname, lbl in zip(files, lbls):
-                file = osp.join(root, fname.split("\t")[0])
+                file = osp.join(root, fname.split(",")[0])
                 feats = reader.get_feats(file)
                 yield feats.data, fname, lbl
 

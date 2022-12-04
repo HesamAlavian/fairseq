@@ -48,7 +48,7 @@ def load_embeddings(directory, LANGS):
 
             with open(f"{lang_dir}/sentences.{lang}.{shard_id}") as sentence_file:
                 for idx, line in enumerate(sentence_file):
-                    sentence_id, sentence = line.strip().split("\t")
+                    sentence_id, sentence = line.strip().split(",")
                     sentence_texts[lang][sentence_id] = sentence
                     sentence_embeddings[lang][sentence_id] = embeddings[idx, :]
 

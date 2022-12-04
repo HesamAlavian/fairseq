@@ -281,7 +281,7 @@ class FileAudioDataset(RawAudioDataset):
         with open(manifest_path, "r") as f:
             self.root_dir = f.readline().strip()
             for i, line in enumerate(f):
-                items = line.strip().split("\t")
+                items = line.strip().split(",")
                 assert len(items) == 2, line
                 sz = int(items[1])
                 if min_sample_size is not None and sz < min_sample_size:

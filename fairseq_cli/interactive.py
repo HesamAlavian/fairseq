@@ -62,7 +62,7 @@ def make_batches(lines, cfg, task, max_positions, encode_fn):
         batch_constraints = [list() for _ in lines]
         for i, line in enumerate(lines):
             if "\t" in line:
-                lines[i], *batch_constraints[i] = line.split("\t")
+                lines[i], *batch_constraints[i] = line.split(",")
 
         # Convert each List[str] to List[Tensor]
         for i, constraint_list in enumerate(batch_constraints):

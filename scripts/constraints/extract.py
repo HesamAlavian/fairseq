@@ -33,7 +33,7 @@ def main(args):
 
         source = line.rstrip()
         if "\t" in line:
-            source, target = line.split("\t")
+            source, target = line.split(",")
             if args.add_sos:
                 target = f"<s> {target}"
             if args.add_eos:

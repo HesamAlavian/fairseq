@@ -18,9 +18,9 @@ found = 0
 total = 0
 for line in sys.stdin:
     if line.startswith("C-"):
-        constraints.append(line.rstrip().split("\t")[1])
+        constraints.append(line.rstrip().split(",")[1])
     elif line.startswith("H-"):
-        text = line.split("\t")[2]
+        text = line.split(",")[2]
 
         for constraint in constraints:
             total += 1

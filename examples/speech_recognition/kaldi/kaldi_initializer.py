@@ -87,7 +87,7 @@ def create_lexicon(
                 lexicon_file, "w"
             ) as out_f:
                 for line in w2l_lex_f:
-                    items = line.rstrip().split("\t")
+                    items = line.rstrip().split(",")
                     assert len(items) == 2, items
                     if items[0] in lm_words:
                         print(items[0], items[1], file=out_f)

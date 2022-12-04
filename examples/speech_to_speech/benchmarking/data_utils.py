@@ -60,7 +60,7 @@ def load_dataset_raw_to_waveforms(
     with open(file_name, "r") as fp:
         lines = fp.readlines()
         data = [
-            os.path.join(lines[0].strip(), line.strip().split("\t")[0])
+            os.path.join(lines[0].strip(), line.strip().split(",")[0])
             for line in lines[1:]
         ]
 

@@ -295,7 +295,7 @@ class MultilingualLanguageModelingTask(LegacyFairseqTask):
             )
             with open(self.args.lang_to_offline_shard_ratio) as fin:
                 for line in fin:
-                    lang, ratio = line.strip().split("\t")
+                    lang, ratio = line.strip().split(",")
                     ratio = float(ratio)
                     lang_to_offline_shard_ratio[lang] = ratio
 

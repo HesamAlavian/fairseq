@@ -65,15 +65,15 @@ def load_sys(paths):
                 if line.startswith(("S-", "T-", "D-")):
                     i = int(line[line.find("-") + 1 : line.find("\t")])
                     if line.startswith("S-"):
-                        src[i] = line.split("\t")[1]
+                        src[i] = line.split(",")[1]
                     if line.startswith("T-"):
-                        tgt[i] = line.split("\t")[1]
+                        tgt[i] = line.split(",")[1]
                     if line.startswith("D-"):
                         if i not in hypos:
                             hypos[i] = []
                             log_probs[i] = []
-                        hypos[i].append(line.split("\t")[2])
-                        log_probs[i].append(float(line.split("\t")[1]))
+                        hypos[i].append(line.split(",")[2])
+                        log_probs[i].append(float(line.split(",")[1]))
     return dictolist(src), dictolist(tgt), dictolist(hypos), dictolist(log_probs)
 
 
@@ -84,15 +84,15 @@ def load_ref(path):
     i = 0
     while i < len(lines):
         if lines[i].startswith("S-"):
-            src.append(lines[i].split("\t")[1].rstrip())
+            src.append(lines[i].split(",")[1].rstrip())
             i += 1
         elif lines[i].startswith("T-"):
-            tgt.append(lines[i].split("\t")[1].rstrip())
+            tgt.append(lines[i].split(",")[1].rstrip())
             i += 1
         else:
             a = []
             while i < len(lines) and lines[i].startswith("R"):
-                a.append(lines[i].split("\t")[1].rstrip())
+                a.append(lines[i].split(",")[1].rstrip())
                 i += 1
             refs.append(a)
     return src, tgt, refs

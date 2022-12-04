@@ -18,7 +18,7 @@ def main(args):
         return mt.tokenize(s, return_str=True)
 
     for line in sys.stdin:
-        parts = list(map(tok, line.split("\t")))
+        parts = list(map(tok, line.split(",")))
         print(*parts, sep="\t", flush=True)
 
 

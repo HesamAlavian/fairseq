@@ -74,7 +74,7 @@ def read_output(meteor_output_path, n_repeats):
     for line in open(meteor_output_path):
         if not line.startswith("Segment "):
             continue
-        score = float(line.strip().split("\t")[1])
+        score = float(line.strip().split(",")[1])
         raw_scores.append(score)
         if len(raw_scores) == n_combinations:
             average_scores.append(sum(raw_scores) / n_combinations)

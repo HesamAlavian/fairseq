@@ -17,7 +17,7 @@ params = parser.parse_args()
 
 
 def get_fname(line):
-    p = os.path.basename(line.split("\t")[0])
+    p = os.path.basename(line.split(",")[0])
     p = os.path.splitext(p)[0]
     return p
 

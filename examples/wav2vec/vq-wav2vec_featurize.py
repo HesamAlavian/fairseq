@@ -92,7 +92,7 @@ class DatasetWriter:
             lines = fp.read().split("\n")
             root = lines.pop(0).strip()
             fnames = [
-                osp.join(root, line.split("\t")[0]) for line in lines if len(line) > 0
+                osp.join(root, line.split(",")[0]) for line in lines if len(line) > 0
             ]
 
         return fnames

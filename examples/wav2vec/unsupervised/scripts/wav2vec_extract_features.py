@@ -70,7 +70,7 @@ def get_iterator(args):
     with open(osp.join(args.data, args.split) + ".tsv", "r") as fp:
         lines = fp.read().split("\n")
         root = lines.pop(0).strip()
-        files = [osp.join(root, line.split("\t")[0]) for line in lines if len(line) > 0]
+        files = [osp.join(root, line.split(",")[0]) for line in lines if len(line) > 0]
 
         num = len(files)
         reader = Wav2VecFeatureReader(args.checkpoint, args.layer)

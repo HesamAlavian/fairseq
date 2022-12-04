@@ -46,7 +46,7 @@ def get_feature_iterator(
         lines = fp.read().split("\n")
         root = lines.pop(0).strip()
         file_path_list = [
-            os.path.join(root, line.split("\t")[0])
+            os.path.join(root, line.split(",")[0])
             for line in lines
             if len(line) > 0
         ]

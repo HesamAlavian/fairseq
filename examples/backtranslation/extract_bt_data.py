@@ -58,10 +58,10 @@ def main():
     ) as tgt_h:
         for line in tqdm(fileinput.input(args.files)):
             if line.startswith("S-"):
-                tgt = safe_index(line.rstrip().split("\t"), 1, "")
+                tgt = safe_index(line.rstrip().split(","), 1, "")
             elif line.startswith("H-"):
                 if tgt is not None:
-                    src = safe_index(line.rstrip().split("\t"), 2, "")
+                    src = safe_index(line.rstrip().split(","), 2, "")
                     if validate(src, tgt):
                         print(src, file=src_h)
                         print(tgt, file=tgt_h)

@@ -29,7 +29,7 @@ paths = []
 with open(params.tsv) as f:
     root = next(f).rstrip()
     for line in f:
-        paths.append(os.path.join(root, line.rstrip().split("\t")[0]))
+        paths.append(os.path.join(root, line.rstrip().split(",")[0]))
 
 # load vads
 list_intervals = []

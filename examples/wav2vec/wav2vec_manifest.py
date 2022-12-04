@@ -75,7 +75,7 @@ def main(args):
             frames = soundfile.info(fname).frames
             dest = train_f if rand.random() > args.valid_percent else valid_f
             print(
-                "{}\t{}".format(os.path.relpath(file_path, dir_path), frames), file=dest
+                "{},{}".format(os.path.relpath(file_path, dir_path), frames), file=dest
             )
     if valid_f is not None:
         valid_f.close()

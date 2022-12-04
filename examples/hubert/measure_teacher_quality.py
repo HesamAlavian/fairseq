@@ -88,7 +88,7 @@ def read_phn(tsv_path, rm_stress=True):
     uid2phns = {}
     with open(tsv_path) as f:
         for line in f:
-            uid, phns = line.rstrip().split("\t")
+            uid, phns = line.rstrip().split(",")
             phns = phns.split(",")
             if rm_stress:
                 phns = [re.sub("[0-9]", "", phn) for phn in phns]

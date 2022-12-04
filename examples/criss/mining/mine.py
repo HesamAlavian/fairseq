@@ -229,8 +229,8 @@ if __name__ == "__main__":
     ) as train_t:
         count = 0
         for s_line, t_line in zip(all_s, all_t):
-            s_line = s_line.split("\t")[1]
-            t_line = t_line.split("\t")[1]
+            s_line = s_line.split(",")[1]
+            t_line = t_line.split(",")[1]
             if count >= args.valid_size:
                 train_s.write(s_line)
                 train_t.write(t_line)
